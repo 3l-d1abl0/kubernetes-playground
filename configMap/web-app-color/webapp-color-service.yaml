@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-11-15T14:48:28Z"
+  name: webapp-color-service
+  namespace: default
+  resourceVersion: "732"
+  uid: 42fa49e0-df80-4515-b392-b3c15f06d2ac
+spec:
+  clusterIP: 10.43.49.119
+  clusterIPs:
+  - 10.43.49.119
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    name: webapp-color
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
